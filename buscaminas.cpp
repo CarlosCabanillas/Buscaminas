@@ -25,14 +25,24 @@ void rellena(int a[M][N]){
             a[fila][colum] = 0;
 }
 
-int main(){
-    int tablero[M][N];
-    rellena(tablero);
-    pon_minas(tablero);
-    return EXIT_SUCCESS;
+void toti(int tablero[M][N]){
+	int x,y;
+	for (x=0; x<M; x++){
+		for (y=0; y<N; y++){
+			printf("%d", tablero[x][y]);
+}
+			printf("\n");
+}		
 }
 
 
 
+int main(){
+    int tablero[M][N];
+	rellena(tablero);
+    pon_minas(tablero);
+	toti(tablero);
+    return EXIT_SUCCESS;
+}
 
 
