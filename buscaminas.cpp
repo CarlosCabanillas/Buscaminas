@@ -31,14 +31,14 @@ void toti(int tablero[N][N]){
 	    printf("%d", tablero[x][y]);
 	}
 	printf("\n");
-    }		
+    }
 }
 
-void matriz_x(int a[N][N], int ver_f, int ver_c){
+void matriz_x(int a[N][N], int r[N][N]){
     char letra = 'x';
     for(int f=0; f<N;f++) {
 	for(int c=0; c<N; c++)
-	    if ( ver_f == f && ver_c == c)
+	    if (r[f][c] == 1)
 		printf("%i", a[f][c]);
 	    else
 		printf("%c", letra);
@@ -47,11 +47,47 @@ void matriz_x(int a[N][N], int ver_f, int ver_c){
 
 }
 
+void revela(int tablero[N][N]) {
+    int x, y;
+    printf("introduce (0,0): ");
+    scanf("%i %*1[,] %i", &x, &y);
+    tablero[x][y] = 1;
+}
+
+int comprueba(){
+    
+
+
+
+}
+
 int main(){
     int tablero[N][N];
+    int revelar[N][N];
+    bool finish = false;
+
     rellena(tablero);
-    matriz_x(tablero, 2, 3);
+    rellena(revelar);
     pon_minas(tablero);
+
+    while(!finish) {
+        revela(revelar);
+        matriz_x(tablero, revelar);
+
+        int vcomprueba = comprueba(tablero);
+        if (vcomprueba == 0)
+            continue;
+        if (vcomprueba == 1)
+        {
+            //Ha ganado
+        }
+        else
+        {
+            //Ha perdido
+        }
+        finish = true;
+    }
+
     return EXIT_SUCCESS;
 }
 
@@ -71,5 +107,4 @@ int main(){
 
 
 
-/*Quitar el 2, 3 y meter para que me pida la coordenada*/
 /*Hacer un do while, pedir la coordenada mientras que salga un 0*/
