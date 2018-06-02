@@ -112,21 +112,3 @@ int main(){
 
     return EXIT_SUCCESS;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Hacer un do while, pedir la coordenada mientras que salga un 0*/
