@@ -51,7 +51,7 @@ void revela(int tablero[N][N]) {
 
     int x, y;
     do {
-    printf("introduce (0,0): ");
+    printf("introduce una coordemada (x,y): ");
     scanf("%i %*1[,] %i", &x, &y);
     } while ((x > N-1 || y > N-1) || (x < 0 || y < 0));
     tablero[x][y] = 1;
